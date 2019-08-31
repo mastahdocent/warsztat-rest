@@ -83,10 +83,10 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "movies-rest-db",
-        "USER": "postgres",
-        "PASSWORD": "p4ssw0rd",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST", default="127.0.0.1"),
+        "PORT": config("DB_PORT", cast=int, default=5432),
     }
 }
 
